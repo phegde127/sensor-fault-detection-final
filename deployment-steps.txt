@@ -1,0 +1,85 @@
+1. Login to AWS Management console.
+
+2. Create IAM user for deployment
+
+	with specific access
+	
+	1. EC2 access : It is virtual machine
+
+	2. S3 bucket: To store artifact and model in s3 bucket
+
+	3. ECR: Elastic Container registry: To save your docker image in aws
+
+	Description: About the deployment
+
+	1. Build docker image of the source code
+	2. Push your docker image to ECR
+	3. Launch Your EC2 
+	4. Pull Your image from ECR in EC2
+	5. Lauch your docker image in EC2
+
+	Policy: Attach existing policy directly
+	
+	1. AmazonEC2ContainerRegistryFullAccess
+	2. AmazonEC2FullAccess
+	3. AmazonS3FullAccess
+	
+	User: phsensor
+	Access ID: AKIAXKXDD6OP64YAFHXP
+	Secret Key: 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
+			tfN5XDkyUS24eT/KtGP4wAE4BHV73Gj8BCL89IBg
+	
+	Users with AWS Management Console access can sign-in at: https://hegde127.signin.aws.amazon.com/console
+
+3.Create a s3 bukcet in EU (London) eu-west-2
+	bucket name: ph-scania-sensor
+	
+4. ECR repo to store/save docker image
+	504061227935.dkr.ecr.eu-west-2.amazonaws.com/phsensor
+	
+5. EC2 machine  Ubuntu  Created
+
+6. Open EC2 and Install docker in EC2 Machine 
+	
+	EC2 name: phec2
+	
+	#optinal
+	sudo apt-get update -y
+	sudo apt-get upgrade
+	
+	#required to clear screen type   clear
+	curl -fsSL https://get.docker.com -o get-docker.sh  -- to check type   ls  -- type ---  cat get-docker.sh
+	sudo sh get-docker.sh
+	sudo usermod -aG docker ubuntu
+	newgrp docker
+	
+7. Configure EC2 as self-hosted runner
+
+	- Open the githud repo
+	- action -> runners -> new self-hosted runner
+
+setting>actions>runner>new self hosted runner> choose os> 
+then run command one by one
+
+	./run.sh
+
+8. Setup github secrets
+
+AWS_ACCESS_KEY_ID=AKIAXKXDD6OP64YAFHXP
+
+AWS_SECRET_ACCESS_KEY=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
+
+AWS_REGION=eu-west-2
+
+AWS_ECR_LOGIN_URI=504061227935.dkr.ecr.eu-west-2.amazonaws.com
+
+ECR_REPOSITORY_NAME=phsensor
+
+MONGO_DB_URL=mongodb+srv://avnish:Aa327030@cluster0.or68e.mongodb.net/admin?authSource=admin&replicaSet=atlas-desfdx-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
+
+mongodb+srv://phegde127:Hegde127@pradeepcluster.veyr0ly.mongodb.net/?retryWrites=true&w=majority
+
+
+
+Param Nandha - North Cheam
+Elliot Colburn - Carshalton and Wallington
