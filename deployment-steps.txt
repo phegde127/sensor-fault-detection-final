@@ -25,10 +25,9 @@
 	3. AmazonS3FullAccess
 	
 	User: phsensor
-	Access ID: AKIAXKXDD6OP64YAFHXP
-	Secret Key: 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
-			tfN5XDkyUS24eT/KtGP4wAE4BHV73Gj8BCL89IBg
-	
+	Access ID: 
+	Secret Key: 
+				
 	Users with AWS Management Console access can sign-in at: https://hegde127.signin.aws.amazon.com/console
 
 3.Create a s3 bukcet in EU (London) eu-west-2
@@ -65,9 +64,9 @@ then run command one by one
 
 8. Setup github secrets
 
-AWS_ACCESS_KEY_ID=AKIAXKXDD6OP64YAFHXP
+AWS_ACCESS_KEY_ID=
 
-AWS_SECRET_ACCESS_KEY=tfN5XDkyUS24eT/KtGP4wAE4BHV73Gj8BCL89IBg
+AWS_SECRET_ACCESS_KEY=
 
 AWS_REGION=eu-west-2
 
